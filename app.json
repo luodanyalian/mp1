@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/changeName/index",
+    "pages/index/index",
+    "pages/noun/noun",
+    "pages/changeName/change/index",
+    
+    "pages/chooseRole/index",
+    "pages/noun/completed/completed",
+"pages/noun/not_complete/not_complete",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "布鲁可大冒险",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "0"
+  }
+}

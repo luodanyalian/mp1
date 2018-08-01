@@ -1,0 +1,3 @@
+<template name="mask_tpl">
+  <view class='mask' style='height:{{winHeight}}px;width:{{winWidth}}px;display:{{show}}'></view>
+</template>

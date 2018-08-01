@@ -1,0 +1,3 @@
+<template name="map">
+  <map id="myMap" class="my-map" show-location longitude='{{longitude}}' latitude='{{latitude}}' markers='{{markers}}' scale="14"/>
+</template>

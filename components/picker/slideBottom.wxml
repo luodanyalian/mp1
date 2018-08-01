@@ -1,0 +1,12 @@
+<template name="slide_bottom">
+  <view class='slide_bottom' style="display:{{show}};" animation="{{sildeAnimationData}}">
+    <image class='slide_bottom_bg' src="http://h5.putao.com/seekingImages/img_picker@3x.png"></image>
+    <view class='slide_bottom_close_btn' bindtap="closeOtherSighs"></view>
+    <scroll-view scroll-y class='slide_bottom_items'>
+      <view class='slide_bottom_item' wx:for="{{signList}}" wx:key="unique" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}" bindtap='selectSign'>
+        <image class='slide_sel_icon {{selectSignIndex==index?"":"hide"}}' src='http://h5.putao.com/seekingImages/icon_tick_yellow@3x.png'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</template>

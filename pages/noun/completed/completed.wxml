@@ -1,0 +1,30 @@
+<import src="../../../components/background-audio/background-audio.wxml" />
+
+<!-- 完成任务页面 -->
+<view class='container'>
+    <swiper class="swiper" bindchange="changeIndicatorDots" >
+      <block  wx:for="{{task.task_images}}" wx:for-index="index" wx:key="unique-{{index}}" wx:for-item="item">
+        <swiper-item class="swiper-item">
+          <text wx:if='{{(current+1)==(index+1)}}' class='indicator-dots'><text>{{index+1}}</text>/<text>{{task.task_images.length}}</text></text>
+          <image lazy-load src="{{item.image}}" class="slide-image"/>
+          <view class="mohu"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class='box title'>{{task.name}}</text>
+    <template is="bgAudio" data="{{playing: playing,playTime: playTime,formatedPlayTime: formatedPlayTime,totalTime:totalTime}}" />
+    <view class='description'>
+      <scroll-view class="scroll-view" scroll-y >
+        <view class='context'>{{task.description}}</view>
+      </scroll-view>
+    </view>
+    <view class='foot'>
+      <view class='foot-box'>
+        <navigator url="../noun/noun" open-type='navigateBack' delta="1"  class='goback' hover-class='none'><image class="icon4" src='{{images.icon05}}'/></navigator>
+        <image class="icon1" src='{{images.icon01}}'/>
+        <image wx:if="{{task.is_completed}}" class="icon3" src='{{images.icon02}}' />
+        <image wx:elif="{{task.id}}" class="icon2" bindtap='gocomplete'  src='{{images.icon03}}'/>
+        <image wx:else class="icon2"  src='{{images.icon04}}'/> 
+      </view>
+    </view>
+</view>

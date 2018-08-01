@@ -1,0 +1,16 @@
+<template name="bgAudio">
+  <view class='box audio-pos'>
+     <view class='audio-box'>
+      <image class="audio-bg" src='http://h5.putao.com/seekingImages/map/img_task_audio_bubble_02@3x.png'></image>
+        <view class="play-time">
+          <text>{{formatedPlayTime}}</text>
+          <text>{{totalTime}}</text>
+        </view>
+        <!-- <audio class="audio {{playing === true?'playing':'norplay'}}" id="myAudio" src="{{dataUrl}}" binderror="audioerror" bindplay="play" bindpause="pause" bindtimeupdate="audioupdate"></audio> -->
+         <!-- <audio id="myAudio" src="{{dataUrl}}" bindplay="audioPlay"  bindpause="audioPause" bindtimeupdate="audioUpdate" binderror="audioError" bindended="audioEnd" ></audio>  -->
+         <!-- <view id="myAudio"></view>   -->
+        <view class='audio {{playing == true ?"playing":"norplay"}}' bindtap='playVoice'></view>
+        <progress class='progress' backgroundColor='#6a8798' percent="{{playTime}}" activeColor="#ffffff"/>
+      </view>
+    </view>
+</template>

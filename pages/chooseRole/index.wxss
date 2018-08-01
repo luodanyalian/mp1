@@ -1,0 +1,189 @@
+@import '../../common/base.wxss';
+.container{
+  padding: 0;
+}
+.paigo{
+  height: 270rpx;
+  width: 270rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left:30rpx;
+  z-index: 3;
+}
+.next_step{
+  height: 110rpx;
+  width: 270rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right:30rpx;
+  z-index: 3;
+}
+.back_btn{
+  height: 130rpx;
+  width: 130rpx;
+  position: absolute;
+  bottom: 5rpx;
+  right:270rpx;
+  z-index: 3;
+}
+.roles{
+  position: absolute;
+  top:260rpx;
+  left:0;
+  width: 100%;
+}
+.keke{
+  position: absolute;
+  top:60rpx;
+  left:20rpx;
+  width: 280rpx;
+  height: 370rpx;
+}
+.bubu{
+  position: absolute;
+  top:0rpx;
+  left:230rpx;
+  width: 330rpx;
+  height: 460rpx;
+}
+.lulu{
+  position: absolute;
+  top:60rpx;
+  right:30rpx;
+  width: 280rpx;
+  height: 370rpx;
+}
+.role_info_box{
+  position: absolute;
+  top:650rpx;
+  left: 0;
+  width: 100%;
+}
+.role_info_box_bg{
+  position: absolute;
+  top:0;
+  left: 20rpx;
+  height: 320rpx;
+  width: 710rpx;
+}
+.choose_text_box{
+  position: absolute;
+  bottom:120rpx;
+  left: 40rpx;
+}
+.choose_text_bg{
+  height: 120rpx;
+  width: 670rpx;
+}
+.choose_text{
+  font-size: 28rpx;
+  color: #a9eaff;
+  position: absolute;
+  top:20rpx;
+  left:20rpx;
+}
+.role_name{
+  position: absolute;
+  top:20rpx;
+  left:45rpx;
+}
+.name_item{
+  width: 220rpx;
+  height: 90rpx;
+  position: relative;
+  float: left;
+}
+.name_bg{
+  width: 100%;
+  height: 100%;
+}
+.name_text{
+  font-size: 28rpx;
+  position: absolute;
+  left: 80rpx;
+  top:9px;
+  color: #432c21;
+}
+.block_items{
+  position: absolute;
+  top:115rpx;
+  left:80rpx;
+  height: 150rpx;
+  width: 585rpx;
+  white-space: nowrap;
+}
+.block_item{
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+  margin:0 10rpx;
+}
+.block_item_img{
+  width: 100%;
+  height: 100%;
+}
+.selected_icon{
+  width:60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.userInfo{
+  width: 100%;
+  height: 150rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+}
+.userInfoBg{
+  width: 370rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  display: block;
+}
+.userAvatar{
+  width:70rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 215rpx;
+  top:18rpx;
+  border-radius: 100rpx;
+}
+.userName{
+  position: absolute;
+  left: 295rpx;
+  top:33rpx;
+  font-size: 28rpx;
+  color:#fff;
+  width:200rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}
+.scrollLeftBtn{
+  width: 60rpx;
+  height: 100rpx;
+  /* background-color: #000; */
+  position: absolute;
+  top:140rpx;
+  left: 20rpx;
+  z-index: 10;
+}
+.scrollRightBtn{
+  width: 60rpx;
+  height: 100rpx;
+  /* background-color: #a9eaff; */
+  position: absolute;
+  top:140rpx;
+  right: 20rpx;
+  z-index: 10;
+}
+.rolsPicsFixTop{
+  top:150rpx;
+}
+.roleInfoBoxFixTop{
+  top:555rpx;
+}

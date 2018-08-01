@@ -1,0 +1,87 @@
+/**app.wxss**/
+view {
+  box-sizing: border-box;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+page {
+  line-height: 1.6;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+}
+icon {
+  vertical-align: middle;
+}
+.page-head {
+  width: 100%;
+  background: url("http://h5.putao.com/seekingImages/img_task_list_user_info@3x.png") no-repeat center;
+  background-size: 100% 100%;
+  height: 166rpx;
+  position: relative;
+  top:0px;
+  z-index:101;
+
+}
+
+.page-head-left {
+  position: absolute;
+  padding-top:32rpx;
+  left:0rpx;
+  padding-left: 31rpx;
+  width: 50%;
+}
+.userinfo-avatar {
+  width: 74rpx;
+  height:75rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 22rpx;
+}
+.userinfo-nickname {
+  color:#fff;
+  font-size:30rpx;
+  width:80px;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  display:inline-block;
+  line-height:75rpx;
+  text-align:left;
+  vertical-align:middle;
+}
+.page-head-right {
+  position:absolute;
+  right:0;
+  width:50%;
+  text-align:right;
+}
+.head-right-title {
+  color: #fff;
+  font-size: 26rpx;
+  padding-bottom: 10rpx;
+}
+.head-right-text {
+  padding-top:30rpx;
+  font-size: 22rpx;
+  line-height: 24rpx;
+  color: #74c2fb;
+  text-shadow: 3rpx 3rpx 1rpx #1d3248;
+  display: inline-block;
+  width: 235rpx;
+  white-space: nowrap
+}
+.nounicon {
+  padding-top:27rpx;
+  padding-right:27rpx;
+  width: 85rpx;
+  height:85rpx;
+  border-radius: 20%;
+  margin-left: 28rpx;
+  text-align: center
+}

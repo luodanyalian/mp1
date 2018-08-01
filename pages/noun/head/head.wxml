@@ -1,0 +1,29 @@
+<template name="head">
+  <view class='page-head'>
+    <view class='page-head-left'>
+      <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{username}}</text>
+    </view>
+    <view class='page-head-right'>
+       <view class='head-right-text'>
+        <view class='head-right-title'>特工等级</view>
+        <text>已完成<text>{{completed}}</text>个任务，共<text>{{total}}</text>个</text>
+        <view wx:if="{{nounicon == 4}}"><text>已经全部完成任务啦！</text></view>
+        <view wx:else><text>再完成<text>{{num}}</text>个升级为<text wx:if='{{nounicon+1 == 2}}'>铜</text><text wx:elif='{{nounicon+1 == 3}}'>银</text><text wx:elif='{{nounicon+1 == 4}}'>金</text>牌</text></view>
+      </view>
+      <!-- //等级 1, 铁 2, 铜 3, 银 4, 金 -->
+      <block wx:if="{{nounicon == 1}}">
+        <image class="nounicon" src='{{images.icon01}}'/>
+      </block>
+      <block wx:elif="{{nounicon == 2}}">
+        <image class="nounicon" src='{{images.icon02}}'/>
+      </block>
+      <block wx:elif="{{nounicon == 3}}">
+        <image class="nounicon" src='{{images.icon03}}'/>
+      </block>
+      <block wx:else="{{nounicon == 4}}">
+        <image class="nounicon" src='{{images.icon04}}'/>
+      </block>
+    </view>
+  </view>
+</template>

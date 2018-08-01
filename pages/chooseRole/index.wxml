@@ -1,0 +1,53 @@
+<view class="container">
+  <view class='userInfo'>
+    <image class='userInfoBg' bindtap='updateUserInfo' src='{{images.userInfoBg}}'></image>
+    <image class='userAvatar' src='{{userAvatar}}'></image>
+    <text class='userName'>{{userName}}</text>
+  </view>
+  <image class='bg' style='height:{{winHeight}}px;width:{{winWidth}}px' mode="aspectFill" src="{{images.bg}}"></image>
+  <view class='roles {{needFixTop?"rolsPicsFixTop":""}}'>
+    <view wx:for="{{role_images}}" wx:key="unique">
+      <!-- <image class="{{}}" src="{{item.className=='bubu'?item.sel_src:item.nor_src}}"></image>  -->
+      <image class="{{item.className}}" src="{{index==sel_role_index?item.sel_src:item.nor_src}}"></image>
+    </view>
+    <!-- <image class='keke' src='../../images/img_choose_character_cc_sel@3x.png'></image>
+    <image class='bubu' src='../../images/img_choose_character_bb_nor@3x.png'></image>
+    <image class='lulu' src='../../images/img_choose_character_ll_nor@3x.png'></image> -->
+  </view>
+  <view class='role_info_box {{needFixTop?"roleInfoBoxFixTop":""}}'>
+    <view class='scrollLeftBtn' bindtap='scrollLeft'></view>
+    <view class='scrollRightBtn' bindtap='scrollRight'></view>
+    <image class='role_info_box_bg' src="{{images.role_info_box_bg}}"></image>
+    <scroll-view class="block_items" scroll-x scroll-with-animation scroll-left="{{cars_scroll_left}}" bindscroll="scrollHandle">
+      <view wx:for="{{blocks_data}}" class='block_item' wx:key="unique"  data-block-index="{{index}}" data-car_img="{{item}}" bindtap='selectBlock'>
+        <image class='block_item_img' src='{{item}}'></image>
+        <image class='selected_icon {{index == sel_block_index?"":"hide"}}' src='{{images.selected_icon}}'></image>
+      </view>
+    </scroll-view>
+    <view class='role_name'>
+      <view class="name_item" wx:for="{{name_arr}}" wx:key="unique" data-role-index="{{index}}" data-role-id="{{item.id}}" bindtap="changeRole">
+        <image class="name_bg {{sel_role_index==index?'':'hide'}}" src='{{images.name_bg}}'></image>
+        <text class='name_text'>{{item.name}}</text>
+      </view>
+      <!-- <view class="name_item">
+        <image class='name_bg' src='../../images/img_choose_character_highlight@3x.png'></image>
+        <text class='name_text'>可可</text>
+      </view>
+      <view class="name_item">
+        <image class='name_bg' src='../../images/img_choose_character_highlight@3x.png'></image>
+        <text class='name_text'>布布</text>
+      </view>
+      <view class="name_item">
+        <image class='name_bg' src='../../images/img_choose_character_highlight@3x.png'></image>
+        <text class='name_text'>鲁鲁</text>
+      </view> -->
+    </view>
+  </view>
+  <view class="choose_text_box">
+    <image class='choose_text_bg' src='{{images.choose_text_bg}}'></image>
+    <text class='choose_text'>请选择本次同行的伙伴和对应的交通工具</text>
+  </view>
+  <image class='paigo' mode='aspectFit' src="{{images.paigo}}"></image>
+  <image class='back_btn' bindtap='back' mode='aspectFit' src="{{images.back_btn}}"></image>
+  <image class='next_step' bindtap='startSeeking' mode='aspectFit' src="{{images.next_step}}"></image>
+</view>

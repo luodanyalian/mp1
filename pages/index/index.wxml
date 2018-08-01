@@ -1,0 +1,31 @@
+<view class="container">
+  <image class='bg' style='height:{{winHeight}}px;width:{{winWidth}}px' mode="aspectFill" src="{{background_url}}"></image>
+  <view class='locat_box'>
+    <text class='location_text'>{{signName}}</text>
+    <image class='locat_bg' mode='aspectFit'  src="{{images.locat_bg}}"></image>
+    <image class='other_sighs' mode='aspectFit' bindtap='showOtherSighs'  src="{{images.other_sighs}}"></image>
+    <view class='progress_bar'>
+      <view class='progress_bar_inner' style="width:{{voiceprogressWidth}}"></view>
+    </view>
+    <text class="spend_time">{{current_time}}</text>
+    <text class="total_time">{{totalTime}}</text>
+    <view class='play {{playing == true ?"playing":"norplay"}}' bindtap='playVoice'></view>
+    <!-- <image class="play" src="{{images.play}}" bindtap='playVoice'></image> -->
+  </view>
+  <scroll-view class="intro_text" scroll-y >
+    <view class='intro_text_inner'>
+      <text>{{desc}}</text>
+    </view>
+  </scroll-view>
+  <image class='paigo' mode='aspectFit' src="{{images.paigo}}"></image>
+  <image class='go_now' mode='aspectFit' bindtap='setOut' src="{{isAllFinished?images.all_finished:images.go_now}}"></image>
+</view>
+
+<import src="../../components/mask/index.wxml"/>
+<template is="mask_tpl" data="{{winHeight: winHeight,winWidth: winWidth,show:maskDisplay}}"/>
+ 
+<import src="../../components/author/author.wxml"/>
+<template is="author" data="{{show:authorDisplay}}"/> 
+
+<import src="../../components/picker/slideBottom.wxml"/>
+<template is="slide_bottom" data="{{slide_bottom_y:slide_bottom_y,show:maskDisplay,sildeAnimationData:sildeAnimationData,signList:signList,selectSignIndex:selectSignIndex}}"/>

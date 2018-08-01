@@ -1,0 +1,9 @@
+<view class='wrapper' style='height:{{winHeight}}px;width:{{winWidth}}px'>
+  <view class='title'>
+    <label>请输入您的昵称</label>
+  </view>
+  <input class='new_name' bindinput="nameInput" placeholder="请输入新的昵称" value="{{userName}}"></input>
+  <view class='btn_box'>
+    <button type="primary" size="small" bindtap="save"> 保存 </button>
+  </view>
+</view>

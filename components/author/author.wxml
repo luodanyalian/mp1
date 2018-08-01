@@ -1,0 +1,10 @@
+<template name="author">
+  <view class='author_container' style="display:{{show}};">
+     <image class='author_bg' src="https://h5.putao.com/seekingImages/alerts_bg@3x.png"></image>
+         <view class='auto_close_btn' bindtap="closeAuthor"></view>
+
+     <view class='author_title' >布鲁可大冒险申请获取以下权限</view>
+      <view class='author_subtitle' >获得您的公开信息(昵称,头像等)</view>
+           <button class='author_btn' bindgetuserinfo="bindgetuserinfo" open-type	="getUserInfo"></button>
+  </view>
+</template>

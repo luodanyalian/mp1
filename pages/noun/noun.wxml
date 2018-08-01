@@ -1,0 +1,124 @@
+<import src="./head/head.wxml" />
+<import src="./map/map.wxml" />
+<template is="head" data="{{...head}}" />
+<view class="container">
+    <!-- 身份升级页面-->
+    <block wx:if="{{showVerb==1}}">  
+      <view class="mask verb-box">
+          <view class='verb-title'>
+              <image class="verb-bg" src='{{images.verb_bg}}'></image>
+              <image wx:if="{{missionList.grade == 4}}" class="verb" src='{{images.big_gold}}'/>
+              <image wx:elif="{{missionList.grade == 3}}" class="verb" src='{{images.big_silver}}'/>
+              <image wx:else class="verb" src='{{images.big_bronze}}'/>
+          </view>
+          <!-- 升级到金 -->
+          <block wx:if="{{missionList.grade == 4}}">
+              <view class="verb-main">
+                <view>太完美了</view>
+                <view>完成了所有任务，正式成为BEA金牌特工</view>
+              </view>
+              <view  class="query">
+                  <web-view wx:if="{{toverb!==''}}" src="{{toverb}}"></web-view>
+                  <image class="btn2"src='{{images.icon16}}' bindtap='goverb'></image>  
+              </view>
+              <image class='relx2' bindtap='hideVerb' src='{{images.icon17}}'></image>
+          </block>
+          <block wx:else>
+              <view class="verb-main">一共
+              <text>{{missionList.total_task_qty}}</text>个任务，已经完成
+              <text>{{missionList.completed_task_qty}}</text>个，还有
+              <text>{{missionList.total_task_qty - missionList.completed_task_qty}}</text>个任务未被找到。</view>
+              <view class="query" bindtap='hideVerb'>
+                  <image class="btn2"src='{{images.icon01}}'></image>
+              </view>
+              <image class='relx' bindtap='relx' src='{{images.icon03}}'></image>
+          </block>  
+      </view>
+     </block>   
+    <!-- 展开地图页面-->
+    <block wx:if="{{showMap}}">
+        <view class="mask map-box">
+            <image class="bg" src='{{images.icon04}}'></image>
+            <view class='map-border'>
+              <block wx:if="{{missionList.deal_type == 1}}">
+                <template is="map" data="{{...map}}" />
+              </block>
+              <block wx:elif="{{missionList.deal_type == 2}}">
+                      <movable-area class="my-map" scale-area  >
+                <movable-view class="my-map"  direction="all" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}">
+                  <image class="movable-image" src='{{missionList.map_image}}'></image>
+                </movable-view>
+            </movable-area>
+                <!-- <image class="my-map"  src='{{missionList.map_image}}'></image> -->
+              </block>
+            </view>
+            <image class="btn map" src='{{images.icon05}}' bindtap='hidemap'></image>
+        </view>
+    </block>
+    <!-- 打开地图-->
+    <view class='open-map'>
+        <image class="btn map" src='{{images.icon06}}' bindtap='openMap'></image>
+    </view>
+    <!-- 任务列表-->
+    <scroll-view scroll-y bindscrolltolower="lower" class="noun-list">
+        <view style='height:100rpx;'></view>
+        <view wx:for="{{missionList.tasks}}" wx:key="unique_{{idx}}" wx:for-index="idx" wx:for-item="itemName" class="cxd-noun">
+            <!-- 任务状态 1，解锁 2，上锁 3，未激活 -->
+            <!--完成 -->
+           
+             <!-- <view hidden='{{!itemName.status}}' class='mask list-status'>
+                  <image lazy-load='true'  class="image-center" src="{{images.icon09}}" />
+            </view> -->
+            <block wx:if="{{itemName.status==1}}">
+                <navigator url='./completed/completed?title={{itemName.name}}&task_id={{itemName.id}}' open-type='navigate' hover-class='none'>
+                  <image lazy-load='true'  class="noun-icon" src="{{itemName.cover_image}}" />
+                  <view class='list-status'>
+                      <image lazy-load='true' class="image-success" src="{{images.icon07}}" />
+                  </view>
+                   <view class="itemName">{{itemName.name}}</view> 
+                </navigator>
+            </block>
+            <!--未激活 -->
+            <block wx:elif="{{itemName.status==3}}">
+                <image lazy-load='true' class="noun-icon" src="{{itemName.cover_image}}" />
+                <view class='mask list-status'>
+                    <image lazy-load='true' class="image-center" src="{{images.icon10}}" bindtap='gojihuo' />
+                </view>
+                <view class="itemName">{{itemName.name}}</view>
+            </block>
+            <!--已激活或免费任务就是锁的状态="{{itemName.status==2}}" -->
+            <block wx:else>
+                  <image lazy-load='true' class="noun-icon" src="{{itemName.cover_image}}" />
+                  <view class='mask list-status'>
+                        <image lazy-load='true'  data-taskid="{{itemName.id}}" data-name="{{itemName.name}}" data-latitude="{{itemName.latitude}}" data-longitude="{{itemName.longitude}}" bindtap='gocomplete' class="image-center" src="{{images.icon09}}" />
+                  </view>
+                  <view class="itemName">{{itemName.name}}</view>
+            </block>
+        </view>
+        <view style='height:230rpx;'></view>
+    </scroll-view>
+    <!-- 底部操作提示-->
+    <view class='noun-foot' wx:if="{{missionList.grade == 4}}">
+        <view class='foot-main'>
+            <image class='foot-bg' src='{{images.icon11}}'></image>
+            <navigator  url="../../index/index" open-type='navigateBack' delta="1" class='goback' hover-class='none'></navigator>
+            <web-view wx:if="{{toverb!==''}}" src="{{toverb}}"></web-view>
+            <image class='btn-completed' src='{{images.icon18}}' bindtap='goverb'></image>
+            <view class="foot-text">
+                <text>在植物星球找到布鲁可标志的位置，点开对应的任务图标，确认任务的安全。</text>
+            </view>
+        </view>
+    </view>
+    <!-- <view class='noun-foot' wx:if="{{missionList.completed_task_qty > 0 && missionList.completed_task_qty < missionList.total_task_qty}}"> -->
+    <view class='noun-foot' wx:else>
+        <view class='foot-main'>
+            <image class='foot-bg' src='{{images.icon11}}'></image>
+            <navigator  url="../../index/index" open-type='navigateBack' delta="1"  class='goback' hover-class='none'></navigator>
+            <!-- <image wx:if="{{missionList.grade == 4}}"  class='btn-completed' src='{{images.icon18}}' bindtap='goverb'></image>  -->
+            <image class="btn-completed" src='{{images.icon12}}' bindtap='today'></image>
+            <view class="foot-text">
+                <text>在植物星球找到布鲁可标志的位置，点开对应的任务图标，确认任务的安全。</text>
+            </view>
+        </view>
+    </view>
+</view>

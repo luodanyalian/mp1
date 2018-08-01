@@ -1,0 +1,32 @@
+<import src="../map/map.wxml" />
+<import src="../../../components/background-audio/background-audio.wxml" />
+<view class="not_complete">
+  <image class="bg" src="{{images.icon01}}"></image>
+    <view class='map-border'>
+        <block wx:if="{{task.deal_type==1}}">
+          <template is="map" data="{{...map}}" />
+        </block>
+        <block wx:else>
+            <movable-area class="my-map" scale-area  >
+                <movable-view class="my-map"  direction="all" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}">
+                  <image class="movable-image" src='{{task.map_image}}'></image>
+                </movable-view>
+            </movable-area>
+
+          
+        </block>
+    </view>
+    <text class='box title1'>到{{location}}找到{{task.name}},完成任务吧</text>
+    <!-- <text class='box title'>{{task.name}}</text> -->
+    <template is="bgAudio" data="{{playing: playing,playTime: playTime,formatedPlayTime: formatedPlayTime,totalTime:totalTime}}" />
+    <navigator class="box btngoback" url='../noun/noun' open-type='navigateBack' delta="1" hover-class='none'>
+    </navigator>
+    <image class="box tipback" src='{{images.icon04}}'></image>
+    <block wx:if="{{task.deal_type==2}}">
+       <image class='box btnsuccess' src='{{images.icon03}}' bindtap='gocomplete'></image>
+    </block>
+    <block wx:else>
+      <!-- <text class="tip-text">还没有达到指定地点噢</text> -->
+      <image class='box btnsuccess' src='{{images.icon02}}'></image>
+    </block>
+</view>

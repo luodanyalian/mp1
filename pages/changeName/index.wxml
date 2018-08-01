@@ -1,0 +1,19 @@
+<view class='wrapper'style='height:{{winHeight}}px;width:{{winWidth}}px'>
+  <view class="form_item" bindtap='changeAvatar'>
+    <view class='form_item_inner'>
+      <text class="label">头像</text>
+      <image class='avatar' src='{{userAvatar}}'></image>
+      <text class='more_icon'>></text>
+    </view>
+  </view>
+  <view class="form_item" bindtap='changeName'>
+    <view class='form_item_inner'>
+      <text class="label">昵称</text>
+      <text class="new_name">{{userName}}</text>
+      <text class='more_icon'>></text>
+    </view>
+  </view>
+  <view class='btn_box'>
+    <button type="primary" size="small" bindtap="updateUserInfo"> 保存 </button>
+  </view>
+</view>

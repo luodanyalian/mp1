@@ -1,0 +1,104 @@
+/*遮罩层*/
+.mask{
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  display: none;
+}
+
+/*底部滑出选择器*/
+.slide_bottom{
+  position: fixed;
+  bottom: -700rpx;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  display: block;
+}
+.slide_bottom_bg{
+  width: 100%;
+  height: 700rpx;
+  display: block;
+}
+.slide_bottom_items{
+  width: 100%;
+  height: 600rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+}
+.slide_bottom_item{
+  height: 130rpx;
+  position: relative;
+  padding-left: 120rpx;
+  line-height: 130rpx;
+}
+.slide_sel_icon{
+  position: absolute;
+  left:30rpx;
+  top:30rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.slide_bottom_close_btn{
+  position: absolute;
+  right: 35rpx;
+  top:15rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+/*授权对话框*/
+.author_container{
+  z-index:9999;
+  display:block;
+  width: 560rpx;
+  height: 420rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.author_bg {
+   width: 100%;
+   height: 100%;
+}
+.author_btn{
+  width:176rpx;
+  height:72rpx;
+  position:absolute;
+  bottom:35rpx;
+  left:50%;
+  transform:translate(-50%,0);
+  display:block;
+  background: url('https://h5.putao.com/seekingImages/btn_allow@3x.png') no-repeat center;
+  background-size: 176rpx 72rpx;
+  border-color: #000000;
+}
+.author_btn::after{
+  border: none;
+}
+
+.author_title {
+  position:absolute;
+  top:140rpx;
+  left:34rpx;
+  font-size:32rpx;
+  color: #313131;
+}
+.author_subtitle {
+  position:absolute;
+  top:220rpx;
+  left:34rpx;
+  font-size:28rpx;
+  color: #646464;
+}
+.auto_close_btn {
+  width:60rpx;
+  height:60rpx;
+  position:absolute;
+  top:20rpx;
+  right:20rpx;
+}

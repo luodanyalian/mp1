@@ -1,0 +1,131 @@
+@import '../../common/base.wxss';
+.container{
+  padding: 0;
+}
+.location_cavs{
+  position: absolute;
+  top:30rpx;
+  left: 70rpx;
+}
+.location_text{
+  position: absolute;
+  top:30rpx;
+  left: 70rpx;
+  color:#ffffff;
+  font-size: 40rpx;
+  text-shadow: -6rpx 6rpx 0 #0e5f83
+}
+.locat_box{
+  position: absolute;
+  bottom:100rpx;
+  width: 100%;
+  z-index: 2
+}
+.locat_bg{
+  margin-left: 30rpx;
+  width: 690rpx;
+  height: 400rpx;
+}
+.paigo{
+  height: 270rpx;
+  width: 270rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left:30rpx;
+  z-index: 3;
+}
+.go_now{
+  height: 110rpx;
+  width: 270rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right:30rpx;
+  z-index: 3;
+}
+.other_sighs{
+  width: 190rpx;
+  height: 80rpx;
+  position: absolute;
+  top:20rpx;
+  right:60rpx;
+}
+.other_sighs_btn{
+  width: 160rpx;
+  height: 70rpx;
+  position: absolute;
+  top:20rpx;
+  right:75rpx;
+  border:none;
+}
+.intro_text{
+  height: 140rpx;
+  width:630rpx;
+  font-size: 28rpx;
+  color: #6fdbff;
+  position: absolute;
+  bottom:250rpx;
+  left: 60rpx;
+  z-index: 10;
+  /* background-color: #ccc; */
+}
+.intro_text_inner{
+  padding: 20rpx 20rpx 20rpx 30rpx;
+}
+.play{
+  /* width: 55rpx;
+  height: 55rpx; */
+  position: absolute;
+  right: 80rpx;
+  bottom: 55rpx;
+  height: 47rpx;
+  width: 55rpx;
+  background: url("http://h5.putao.com/seekingImages/icon_loudspeaker_ani@3x.png") no-repeat;
+  background-size: 76rpx 208rpx;
+}
+.norplay {
+  background-position: -10rpx -140rpx;
+}
+@keyframes playing {
+  0%,
+  100% {
+      background-position: -10rpx -140.625rpx; 
+  }
+  33.333333% {
+     background-position: -10rpx -70.5rpx; 
+  }
+  66.666666% {
+     background-position: -10rpx -3rpx; 
+  }
+}
+.playing {
+  -webkit-animation: playing 1s infinite step-start;
+     animation: playing 1s infinite step-start;
+}
+.progress_bar{
+  position: absolute;
+  width: 480rpx;
+  height: 10rpx;
+  left: 88rpx;
+  bottom: 73rpx;
+}
+.progress_bar_inner{
+  width: 0%;
+  background-color: #fff;
+  height: 100%;
+  border-radius: 6rpx;
+  border:1px solid #000;
+}
+.spend_time{
+  position: absolute;
+  left: 88rpx;
+  bottom: 88rpx;
+  font-size: 24rpx;
+  color:#6fdbff;
+}
+.total_time{
+  position: absolute;
+  right: 188rpx;
+  bottom: 88rpx;
+  font-size: 24rpx;
+  color:#6fdbff;
+}
